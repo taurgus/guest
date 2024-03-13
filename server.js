@@ -5,11 +5,13 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
+
+const messagesFile = __dirname + '/data/data.json'
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-// Root route - serves index.html
+// Root route - index.html
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
@@ -26,18 +28,31 @@ app.get('/guestbook', (req, res) => {
     });
 });
 
-// New message route - adds data to json file
 // Renderöi message.html -sivun
 app.get('/message', (req, res) => {
     res.sendFile(__dirname + '/public/message.html');
 });
 
 app.post('/message', (req, res) => {
-    // Add your code here to handle adding new messages to the json file
-    
-    
-    
-});
+    const { username, country, message } = req.body;
+  
+    let messages = [];
+    if (fs.existsSync(messagesFile)) {
+      messages = JSON.parse(fs.readFileSync(messagesFile));
+    }
+  
+    messages.push({ username, country, message });
+  
+    fs.writeFileSync(messagesFile, JSON.stringify(messages, null, 2));
+  
+    res.redirect('/guestbook');
+  });
+
+  // Serve the guestbook page, showing messages
+  app.get('/guestbook', (req, res) => {
+    const messages = JSON.parse(fs.readFileSync(messagesFile));
+    res.json(messages); // Directly return the JSON for simplicity
+  });
 
 
 // Start the server
