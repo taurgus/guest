@@ -1,14 +1,11 @@
 const express = require('express');
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const path = require('path');
 const app = express();
 const port = 3000;
 
-
 const messagesFile = __dirname + '/data/data.json'
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(express.static('public'));
 
 // Root route - index.html
@@ -28,11 +25,12 @@ app.get('/guestbook', (req, res) => {
     });
 });
 
-// Renderöi message.html -sivun
+// Render message.html 
 app.get('/message', (req, res) => {
     res.sendFile(__dirname + '/public/message.html');
 });
-
+//app.post to send the message to the server
+//Required const's in shortened form
 app.post('/message', (req, res) => {
     const { username, country, message } = req.body;
   
@@ -40,11 +38,11 @@ app.post('/message', (req, res) => {
     if (fs.existsSync(messagesFile)) {
       messages = JSON.parse(fs.readFileSync(messagesFile));
     }
-  
+  //Push data to the messages at bottom
     messages.push({ username, country, message });
   
     fs.writeFileSync(messagesFile, JSON.stringify(messages, null, 2));
-  
+  //Redirect to the guestbook page after the message has been added
     res.redirect('/guestbook');
   });
 
@@ -53,7 +51,6 @@ app.post('/message', (req, res) => {
     const messages = JSON.parse(fs.readFileSync(messagesFile));
     res.json(messages); // Directly return the JSON for simplicity
   });
-
 
 // Start the server
 app.listen(port, () => {
