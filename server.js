@@ -73,6 +73,27 @@ app.post('/message', (req, res) => {
     res.json(messages); // Directly return the JSON for simplicity
   });
 
+  app.get('/ajaxmessage', (req, res) => {
+    res.sendFile(__dirname + '/public/ajaxmessage.html');
+});
+
+app.post('/ajaxmessage', (req, res) => {
+  const { username, country, message } = req.body;
+
+  let messages = [];
+  if (fs.existsSync(messagesFile)) {
+    messages = JSON.parse(fs.readFileSync(messagesFile));
+  }
+
+  messages.push({ username, country, message });
+
+  fs.writeFileSync(messagesFile, JSON.stringify(messages));
+
+  res.json(messages);
+});
+
+
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
