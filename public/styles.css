@@ -115,6 +115,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  background-color: transparent; 
 }
 
 table, th, td {
@@ -124,6 +125,7 @@ table, th, td {
 th, td {
   padding: 15px;
   text-align: left;
+  color: red; 
 }
 
 th {
@@ -132,7 +134,7 @@ th {
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: rgba(242, 242, 242, 0.5); 
 }
 
 a {
