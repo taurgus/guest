@@ -6,6 +6,7 @@ const port = 3000;
 
 const messagesFile = __dirname + '/data/data.json'
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Root route - index.html
@@ -72,7 +73,8 @@ app.post('/message', (req, res) => {
     const messages = JSON.parse(fs.readFileSync(messagesFile));
     res.json(messages); // Directly return the JSON for simplicity
   });
-
+  
+  //Serve the ajaxmessage.html
   app.get('/ajaxmessage', (req, res) => {
     res.sendFile(__dirname + '/public/ajaxmessage.html');
 });
@@ -91,8 +93,6 @@ app.post('/ajaxmessage', (req, res) => {
 
   res.json(messages);
 });
-
-
 
 // Start the server
 app.listen(port, () => {

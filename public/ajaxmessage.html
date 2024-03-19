@@ -4,21 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajax</title>
+    
 </head>
 <body>
-    <script src="script.js"></script>
-    
+
     <form id="messageForm">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="country">Country:</label><br>
-        <input type="text" id="country" name="country"><br>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message"></textarea><br>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="text" id="country" placeholder="Country" required>
+        <textarea id="message" placeholder="Message" required></textarea>
         <input type="submit" value="Submit">
     </form>
-
     <div id="messages"></div>
-
+    <script src="script.js"></script>
 </body>
 </html>
