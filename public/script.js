@@ -34,7 +34,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
                 messagesDiv.appendChild(messageDiv);
             }
         } else {
-            alert('An error occurred');
+            alert('Virhe');
         }
     };
 

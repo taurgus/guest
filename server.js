@@ -51,6 +51,9 @@ app.get('/guestbook', (req, res) => {
 app.get('/message', (req, res) => {
     res.sendFile(__dirname + '/public/message.html');
 });
+
+
+
 //app.post to send the message to the server
 //Required const's in shortened form
 app.post('/message', (req, res) => {
@@ -74,6 +77,7 @@ app.post('/message', (req, res) => {
     res.json(messages); // Directly return the JSON for simplicity
   });
   
+  //AJAX
   //Serve the ajaxmessage.html
   app.get('/ajaxmessage', (req, res) => {
     res.sendFile(__dirname + '/public/ajaxmessage.html');
