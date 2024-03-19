@@ -15,14 +15,35 @@ app.get('/', (req, res) => {
 
 // Guestbook route - reads json data file
 app.get('/guestbook', (req, res) => {
-    fs.readFile(__dirname + '/data/data.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Error reading data file');
-        } else {
-            res.json(JSON.parse(data));
-        }
-    });
+  fs.readFile(__dirname + '/data/data.json', 'utf8', (err, data) => {
+      if (err) {
+          console.error(err);
+          res.status(500).send('Error reading data file');
+      } else {
+          const messages = JSON.parse(data);
+          let results = `
+          <head>
+              <link rel="stylesheet" type="text/css" href="/styles.css">
+          </head>
+          <body>
+              <table border="1">
+      `;
+      
+          results += '<tr><td colspan="3"><a href="/">Palaa etusivulle</a></td></tr>';
+
+          for (let i = 0; i < messages.length; i++) {
+              results +=
+                  '<tr>' +
+                  '<td>' + messages[i].username + '</td>' +
+                  '<td>' + messages[i].country + '</td>' +
+                  '<td>' + messages[i].message + '</td>' +
+                  '</tr>';
+          }
+
+          results += '</table>';
+          res.send(results);
+      }
+  });
 });
 
 // Render message.html 
@@ -41,7 +62,7 @@ app.post('/message', (req, res) => {
   //Push data to the messages at bottom
     messages.push({ username, country, message });
   
-    fs.writeFileSync(messagesFile, JSON.stringify(messages, null, 2));
+    fs.writeFileSync(messagesFile, JSON.stringify(messages));
   //Redirect to the guestbook page after the message has been added
     res.redirect('/guestbook');
   });

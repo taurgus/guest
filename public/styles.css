@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 10px;
   background-image: url("images/Bookbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
@@ -107,4 +109,37 @@ button {
 button:hover {
   background-color: rgb(226, 198, 161);
   opacity: 80%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #45a049;
 }
