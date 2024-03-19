@@ -1,62 +1,110 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  header {
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .form-group {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  input[type="text"],
-  input[type="email"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 100%;
-  }
-  
-  button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background-color: #024702;
-  }
+  font-family: sans-serif;
+  margin: 0;
+  padding: 10px;
+  background-image: url("images/Bookbackground.jpg");
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 144px;
+  margin-bottom: 20px;
+  font-family: "Rouge Script";
+  font-style: italic;
+  align-content: center;
+  text-align: center;
+  background-color: black;
+  color: #ddd;
+  opacity: 60%;
+}
+
+h2 {
+  font-size: 48px;
+  font-family: "Clicker Script";
+  font-style: italic;
+  text-align: center;
+  color: antiquewhite;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+ul {
+  align-items: center;
+  text-align: center;
+  padding-left: 43%;
+  float: left;
+}
+
+nav {
+  align-items: center;
+  text-align: center;
+}
+
+li {
+  float: left;
+  margin-left: 20px;
+  list-style-type: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: antiquewhite;
+}
+
+li a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+li a:hover {
+  color: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 10px;
+  width: 100%;
+  background: antiquewhite;
+  opacity: 70%;
+}
+
+button {
+  background-color: antiquewhite;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  opacity: 70%;
+}
+
+button:hover {
+  background-color: rgb(226, 198, 161);
+  opacity: 80%;
+}
