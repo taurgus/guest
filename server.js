@@ -55,8 +55,6 @@ app.get('/message', (req, res) => {
     res.sendFile(__dirname + '/public/message.html');
 });
 
-
-
 //app.post to send the message to the server
 //Required const's in shortened form
 app.post('/message', (req, res) => {
