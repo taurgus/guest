@@ -27,7 +27,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
             // Clear the messages div
             messagesDiv.innerHTML = '';
 
-            // Add each message to the messages div
+            //Loop to add each message to the messages div
             for (var i = 0; i < messages.length; i++) {
                 var messageDiv = document.createElement('div');
                 messageDiv.textContent = messages[i].username + ' (' + messages[i].country + '): ' + messages[i].message;
