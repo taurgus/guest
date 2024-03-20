@@ -5,8 +5,11 @@ const app = express();
 const port = 3000;
 
 const messagesFile = __dirname + '/data/data.json'
+//Bodyparser for guestbook
 app.use(bodyParser.urlencoded({ extended: true }));
+//Bodyparser for AJAX
 app.use(bodyParser.json());
+// Serve static files from the public folder
 app.use(express.static('public'));
 
 // Root route - index.html

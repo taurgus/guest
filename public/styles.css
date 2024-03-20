@@ -162,3 +162,10 @@ a {
 a:hover {
   color: white;
 }
+
+#messages{
+  color: #ffffff; 
+  font-size: 2.2em;
+  font-family: "Rouge Script"; 
+  text-align: center;
+}

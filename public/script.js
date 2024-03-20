@@ -7,7 +7,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
     var country = document.getElementById('country').value;
     var message = document.getElementById('message').value;
 
-    // Check if the form data is not empty
+    // Check if the form data is not empty and prevent the form from submitting if it is
     if (!username || !country || !message) {
         alert('All fields are required!');
         return;
