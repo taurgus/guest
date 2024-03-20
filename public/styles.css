@@ -85,6 +85,20 @@ label {
   font-family: "Times New Roman", Times, serif;
   margin-bottom: 5px;
   display: block;
+  color: black;
+}
+
+#messageForm {
+  margin-left: 40%;
+  margin-top: 15%;
+}
+
+textarea {
+  background-color: antiquewhite;
+  width: 315px;
+  max-width: 315px;
+  height: 100px;
+  max-height: 300px;
 }
 
 input[type="text"],
@@ -112,36 +126,39 @@ button:hover {
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
+  margin-left: 10%;
+  margin-top: 5%;
+  width: 80%;
+  border-style: none;
   margin-bottom: 20px;
-  background-color: transparent; 
+  background-image: url("images/PlankPaper.jpg");
+  font-family: "Rouge Script";
 }
 
-table, th, td {
-  border: 1px solid #ddd;
+tr td a {
+  color: black;
 }
 
-th, td {
-  padding: 15px;
+td {
+  padding: 5px;
   text-align: left;
-  color: red; 
-}
-
-th {
-  background-color: #4CAF50;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 tr:nth-child(even) {
-  background-color: rgba(242, 242, 242, 0.5); 
+  background-color: rgba(242, 242, 242, 0.5);
+  opacity: 90%;
+}
+
+tr:nth-child(odd) {
+  opacity: 90%;
 }
 
 a {
-  color: #4CAF50;
+  color: antiquewhite;
   text-decoration: none;
 }
 
 a:hover {
-  color: #45a049;
+  color: white;
 }
